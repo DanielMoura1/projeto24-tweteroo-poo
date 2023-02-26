@@ -1,12 +1,17 @@
 import chalk from 'chalk';
 import cors from 'cors';
 import express, { json } from 'express';
+import router from './src/routers/index.js';
 
 const app = express();
 
 app.use(cors());
 app.use(json());
+app.use(router);
+export default app;
 
+
+/*
 const usuarios = [];
 const tweets = [];
 
@@ -66,7 +71,7 @@ app.get('/tweets', (req, res) => {
 function reverseTweets() {
   return [...tweets].reverse();
 }
-
-app.listen(5001, () => {
-  console.log(chalk.bold.blue('Servidor funfando de boas!!!'));
-});
+*/
+//app.listen(5001, () => {
+//  console.log(chalk.bold.blue('Servidor funfando de boas!!!'));
+//});
